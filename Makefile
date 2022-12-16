@@ -1,0 +1,53 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/29 13:52:08 by danielga          #+#    #+#              #
+#    Updated: 2022/12/15 18:15:33 by danielga         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Name of the program that the library will have.
+NAME = libft.a
+
+# The flags with which we will compile the functions.
+FLAGS = -Wall -Wextra -Werror
+
+# All the files of the functions it will host.
+SOURCE = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+		 ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
+		 ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
+		 ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
+		 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+		 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c
+		 
+# To make the library, convert functions (*.c) to objects (*.o) with the -c flag.
+OBJS = $(SOURCE:.c=.o)
+
+# Indicates the header of the library.
+HEADER = libft.h
+
+# When you enter "make" or "make all" it will carry out these instructions.
+all:	$(NAME)
+
+#It will compile the functions and create the library with ar(c create, r replace, s make index).
+$(NAME):
+	gcc $(FLAGS) -c $(SOURCE)
+	ar -crs $(NAME) $(OBJS)
+
+#Deletes all *.o files created in the process.
+clean:
+	rm -rf $(OBJS)
+
+#It will first delete the *.o and then delete the program.
+fclean:	clean
+	rm -f $(NAME)
+
+#It will delete the program and the .o and run the process again.
+re:	fclean all
+
+#This is to indicate to make that these commands have been given specific instructions.
+.PHONY: all NAME clean fclean re
