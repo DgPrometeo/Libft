@@ -6,7 +6,7 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:56:23 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/15 18:15:10 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:47:17 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -268,9 +268,36 @@ char	**ft_split(char const *s, char c);
  * @return The string representing the number.
  * @return NULL if the memory reservation fails.
 **/
-// char	*ft_itoa(int n);
+char	*ft_itoa(int n);
+
+/** 							STRMAPI
+ * @brief To each character of the string 's', apply the function 'f' 
+ * giving as parameters the index of each character within 's' and the 
+ * character itself. generates a new string with the result of the 
+ * successive use of 'f'.
+ * 
+ * @param s	The string to iterate.
+ * @param f	The function to be applied to each character.
+ * 
+ * @return The string created after the correct use of 'f' on each character.
+ * @return NULL if the memory reservation fails.
+**/
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/** 							STRITERI
+ * @brief To each character of the string 's', apply the function 'f' 
+ * giving as parameters the index of each character within 's' and the 
+ * address of the character itself, which can be changed if necessary.
+ * 
+ * @param s	The string to iterate.
+ * @param f	The function to be applied to each character.
+ * 
+ * @return Nothing.
+**/
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
