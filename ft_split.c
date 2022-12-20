@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/**
+ * @brief This function runs through the string counting how many sections the 
+ * memory pool must have to hold the string in memory. memory cache has to have 
+ * in order to hold the string in memory.
+ * 
+ * @param s The original string.
+ * @param c The delimiting character
+ * 
+ * @return The number of cells the memory will have.
+ **/
 static size_t	ft_wordcounter(char const *s, char c)
 {
 	size_t	i;
@@ -33,6 +43,16 @@ static size_t	ft_wordcounter(char const *s, char c)
 	return (w);
 }
 
+/**
+ * @brief This function will traverse the string until it reaches the delimiter
+ * or null. It will start at the position of the pointer you give it to count 
+ * each section independently.
+ * 
+ * @param s The original string.
+ * @param c The delimiting character
+ * 
+ * @return The dimension that each memory cell will have to occupy.
+**/
 static size_t	ft_len(char const *s, char c)
 {
 	size_t	len;
@@ -46,6 +66,14 @@ static size_t	ft_len(char const *s, char c)
 	return (len);
 }
 
+/**
+ * @brief This function runs through and frees each memory cell, ending with 
+ * the freeing of the large memory cache.
+ * 
+ * @param str The complete memory.
+ * 
+ * @return Nothing, as it destroys the memory cache.
+**/
 static void	ft_free(char **str)
 {
 	size_t	i;
@@ -59,6 +87,20 @@ static void	ft_free(char **str)
 	free(str);
 }
 
+/**
+ * @brief This function will traverse the string and when it reaches each 
+ * element, it calculates its dimension and we move the string to that 
+ * position to speed it up. At the memory location we run an ft_substr to 
+ * insert the corresponding string into the memory cell. We check if it has
+ * been saved correctly and  we continue until we write the last cell where
+ * a NULL character was inserted.
+ * 
+ * @param str The memory reserve.
+ * @param s The original string.
+ * @param c The delimiting character
+ * 
+ * @return The dimension that each memory cell will have to occupy.
+**/
 static char	**ft_make_cells(char **str, char *s, char c)
 {
 	size_t	len;
@@ -85,6 +127,16 @@ static char	**ft_make_cells(char **str, char *s, char c)
 	str[n] = NULL;
 	return (str);
 }
+
+/*
+We create the memory pool of type char **. Its size shall be char * and 
+the number of fragments it has calculated with the ft_wordcounter function
+plus 1 to consider the last cell to be null. 
+We check that it has been created correctly or we have been given the 
+string, otherwise it would be null. 
+Once everything is correct, in the return the main function will start 
+to fill each cell with its corresponding substring.
+*/
 
 char	**ft_split(char const *s, char c)
 {

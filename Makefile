@@ -6,7 +6,7 @@
 #    By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 13:52:08 by danielga          #+#    #+#              #
-#    Updated: 2022/12/19 13:45:17 by danielga         ###   ########.fr        #
+#    Updated: 2022/12/20 12:48:23 by danielga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,4 +50,4 @@ fclean:	clean
 re:	fclean all
 
 #This is to indicate to make that these commands have been given specific instructions.
-.PHONY: all NAME clean fclean re
+.PHONY: all clean fclean re

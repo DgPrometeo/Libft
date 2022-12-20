@@ -6,7 +6,7 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:09:25 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/10 18:46:30 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:59:14 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 //				ATOI - Locate and convert a string to an integer.
 
-/*Function that will continue until there are no escape paths.*/
+/**
+ * @brief This function will check if it is a space or any escape route. 
+ * 
+ * @param a Character to check.
+ * 
+ * @return If true, it will jump to the next character.
+ * @return If false, it will continue the main function.
+**/
 static int	ft_space(char a)
 {
 	if (a == ' ' || a == '\f' || a == '\r')
@@ -24,10 +31,14 @@ static int	ft_space(char a)
 	return (0);
 }
 
-/*
-We create another function for the symbols, if it finds them, it will give 1.
-After, we do the if in the while that if any is negative it will give the "-"
-*/
+/**
+ * @brief This function will check if it is a symbol. 
+ * 
+ * @param a Character to check.
+ * 
+ * @return If true, it will change the int to negative "-".
+ * @return If false, it will continue the main function.
+**/
 static int	ft_symbol(char c)
 {
 	if (c == '-' || c == '+')
@@ -38,7 +49,7 @@ static int	ft_symbol(char c)
 /*
 Create 3 variables for the string counter, the integer and the symbol.
 We go through spaces, symbols and finally locate the numbers by converting
-them to int. Finally, we multiply it by the symbol
+them to int. Finally, we multiply it by the symbol.
 */
 
 int	ft_atoi(const char *str)
