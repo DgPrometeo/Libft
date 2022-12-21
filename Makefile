@@ -6,7 +6,7 @@
 #    By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 13:52:08 by danielga          #+#    #+#              #
-#    Updated: 2022/12/20 12:48:23 by danielga         ###   ########.fr        #
+#    Updated: 2022/12/21 20:09:24 by danielga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,14 @@ SOURCE = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		 ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 		 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c\
 		 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-		 
+
+SRCBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c
+	 
 # To make the library, convert functions (*.c) to objects (*.o) with the -c flag.
 OBJS = $(SOURCE:.c=.o)
+
+OBJSBONUS = $(SRCBONUS:.c=.o)
 
 # Indicates the header of the library.
 HEADER = libft.h
@@ -41,6 +46,7 @@ $(NAME):
 #Deletes all *.o files created in the process.
 clean:
 	rm -rf $(OBJS)
+	rm -rf $(OBJSBONUS)
 
 #It will first delete the *.o and then delete the program.
 fclean:	clean
@@ -49,5 +55,9 @@ fclean:	clean
 #It will delete the program and the .o and run the process again.
 re:	fclean all
 
+bonus:
+	gcc $(FLAGS) -c $(SRCBONUS)
+	ar -crs $(NAME) $(OBJSBONUS)
+
 #This is to indicate to make that these commands have been given specific instructions.
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

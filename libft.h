@@ -6,7 +6,7 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:56:23 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/20 18:23:26 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/21 20:08:54 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -403,5 +403,55 @@ int		ft_tolower(int c);
  * @return the character passed to upper case.
  **/
 int		ft_toupper(int c);
+
+//							----BONUS----
+
+/**								LSTNEW
+ * @brief	Crea un nuevo nodo con malloc y la variable de 'content' se 
+ * inicializa con el contenido del parametro 'content'. y el 'next' con NULL.
+ * 
+ * @param content El contenido con el que crear el nodo.
+ * 
+ * @return Un nuevo modo.
+ **/
+t_list	*ft_lstnew(void *content);
+
+/**								LSTADD_FRONT
+ * @brief	Añade el nodo 'new' al principio de la lista 'lst' 
+ * 
+ * @param lst La direccion de un puntero al primer nodo de la lista.
+ * @param new Un puntero al nodo que añadir al principio de la lista.
+ * 
+ * @return Nothing.
+ **/
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/**								LSTSIZE
+ * @brief	Cuenta el numero de nodos de una lista. 
+ * 
+ * @param lst El primer nodo de la lista.
+ * 
+ * @return La longitud de la lista.
+ **/
+int		ft_lstsize(t_list *lst);
+
+/**								LSTLAST
+ * @brief	Devuelve el ultimo nodo de la lista 
+ * 
+ * @param lst El primer nodo de la lista.
+ * 
+ * @return El ultimo nodo de la lista.
+ **/
+t_list	*ft_lstlast(t_list *lst);
+
+/**								LSTADD_BACK
+ * @brief	Añade el nodo 'new' al final de la lista 'lst' 
+ * 
+ * @param lst El primer nodo de la lista.
+ * @param new Un puntero al nodo que añadir a la lista.
+ * 
+ * @return Nothing.
+ **/
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
