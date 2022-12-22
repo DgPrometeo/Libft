@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 19:45:21 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:46:45 by danielga         ###   ########.fr       */
+/*   Created: 2022/12/22 17:33:11 by danielga          #+#    #+#             */
+/*   Updated: 2022/12/22 18:04:41 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Creamos una variable para recorrer lst sin tener que modificar lst, y metemos
-un bucle en el que irá comprobando si el siguiente es nulo, para devolver esa
-posición, o sino seguirá sumando posiciones hasta llegar al final donde devuelve
-la última posición.
+Llamamos a la función 'del' introduciendo el contenido de la lst dada. Después
+liberamos 'lst' con un free.
 */
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*aux;
-
-	aux = lst;
-	while (aux)
-	{
-		if (aux->next == NULL)
-			return (aux);
-		aux = aux->next;
-	}
-	return (aux);
+	del(lst->content);
+	free(lst);
 }

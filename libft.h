@@ -6,7 +6,7 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:56:23 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/21 20:08:54 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/22 18:35:38 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -453,5 +453,57 @@ t_list	*ft_lstlast(t_list *lst);
  * @return Nothing.
  **/
 void	ft_lstadd_back(t_list **lst, t_list *new);
+
+/**								LSTDELONE
+ * @brief	Toma el nodo 'lst' y libera la memoria usando la función
+ * 'del', además de liberar con free. La memoria next no la libera. 
+ * 
+ * @param lst El nodo a liberar.
+ * @param del Un puntero a la función utilizada para liberar el contenido
+ * del nodo.
+ * 
+ * @return Nothing.
+ **/
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**								LSTCLEAR
+ * @brief	Elimina y libera el nodo 'lst' y todos los consecutivos, utilizando
+ * la función del y después con free. Al final, el puntero de lst debe ser NULL.
+ * 
+ * @param lst El puntero al primer nodo.
+ * @param del Un puntero a la función utilizada para liberar el contenido
+ * de cada nodo.
+ * 
+ * @return Nothing.
+ **/
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**								LSTITER
+ * @brief	Itera la lista 'lst' y aplica la función 'f' en el contenido de 
+ * cada nodo.
+ * 
+ * @param lst El puntero al primer nodo.
+ * @param f Un puntero a la función utilizada en cada nodo.
+ * 
+ * @return Nothing.
+ **/
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**								LSTMAP
+ * @brief	Itera la lista 'lst' y aplica la función 'f' en el contenido de 
+ * cada nodo. Crea una lista resultante de la aplicación correcta y sucesiva
+ * de la función 'f' sobre cada nodo. la función 'del' eliminará el contenido
+ * de un nodo si fuera necesario.
+ * 
+ * @param lst El puntero a un nodo.
+ * @param f la dirección de un puntero a una función usada en la iteración
+ * de cada elemento de la lista.
+ * @param del Un puntero a la función utilizada para eliminar el contenido
+ * del nodo si fuera necesario.
+ * 
+ * @return La nueva lista.
+ * @return Nulo si falla la reserva de memoria.
+ **/
+t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *));
 
 #endif

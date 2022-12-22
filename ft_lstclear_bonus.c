@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 19:45:21 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:46:45 by danielga         ###   ########.fr       */
+/*   Created: 2022/12/22 18:05:09 by danielga          #+#    #+#             */
+/*   Updated: 2022/12/22 18:19:05 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Creamos una variable para recorrer lst sin tener que modificar lst, y metemos
-un bucle en el que irá comprobando si el siguiente es nulo, para devolver esa
-posición, o sino seguirá sumando posiciones hasta llegar al final donde devuelve
-la última posición.
+Creamos una variable auxiliar para que sea el puntero de lst. Creamos un bucle
+que recorra toda la lista y en ella indicamos que el aux es el siguiente que esté
+en la lista y llamamos a la función 'ft_lstdelone' para borrar y liberar. Y
+le indicamos que al puntero de lst es el nuevo aux vacío.
 */
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*aux;
 
-	aux = lst;
-	while (aux)
+	while (*lst)
 	{
-		if (aux->next == NULL)
-			return (aux);
-		aux = aux->next;
+		aux = (*lst)->next;
+		ft_lstdelone((*lst), del);
+		*lst = aux;
 	}
-	return (aux);
 }

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 19:45:21 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:46:45 by danielga         ###   ########.fr       */
+/*   Created: 2022/12/22 18:19:44 by danielga          #+#    #+#             */
+/*   Updated: 2022/12/22 18:29:34 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Creamos una variable para recorrer lst sin tener que modificar lst, y metemos
-un bucle en el que irá comprobando si el siguiente es nulo, para devolver esa
-posición, o sino seguirá sumando posiciones hasta llegar al final donde devuelve
-la última posición.
+Creamos un bucle que recorra toda la lista, y dentro ejecutamos la función
+en cada contenido de cada nodo. Después lo movemos al siguiente nodo con next.
 */
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*aux;
-
-	aux = lst;
-	while (aux)
+	while (lst)
 	{
-		if (aux->next == NULL)
-			return (aux);
-		aux = aux->next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (aux);
 }
