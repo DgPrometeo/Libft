@@ -6,13 +6,13 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:00:50 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/19 12:46:00 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 13:39:10 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
+/*									STRMAPI
 We create a function that generates a malloc and inside each cell places the 
 delivered function. 
 First we consider if we have been given the elements to exercise the function. 

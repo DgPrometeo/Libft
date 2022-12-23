@@ -6,17 +6,17 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:45:21 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:46:45 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:37:21 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Creamos una variable para recorrer lst sin tener que modificar lst, y metemos
-un bucle en el que irá comprobando si el siguiente es nulo, para devolver esa
-posición, o sino seguirá sumando posiciones hasta llegar al final donde devuelve
-la última posición.
+/*									LSTLAST
+We create a variable to go through 'lst' without having to modify 'lst', and we
+put a loop in which it will check if the next one is NULL, to return that 
+position; or if not it will keep adding position, and, it will continue adding 
+positions until it reaches the end where it returns the last position.
 */
 
 t_list	*ft_lstlast(t_list *lst)

@@ -6,18 +6,18 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:06:52 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:39:09 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:25:56 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Creamos una variable para no modificar lst que se encuentra en el inicio.
-Primero, verificamos si en la posición de lst existe algo, si no existiera,
-ahí es donde deberíamos de añadir el 'new' y terminar la función vacía.
-Si no es el caso, ejecutamos la función ft_lstlast para movernos a la última
-posición, y en la siguiente añadimos 'new'.
+/*									LSTADD_BACK
+We create a variable in order not to modify lst at the beginning. 
+First, we check if in the 'lst' position something exists, if it doesn't, 
+that's where we should add the 'new' and end the empty function. If this is not
+the case, we run the ft_lstlast function to move to the last position, and in 
+the next one we add 'new'.
 */
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

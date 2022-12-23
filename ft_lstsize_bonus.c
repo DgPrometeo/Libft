@@ -6,17 +6,17 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:26:10 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 17:53:48 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:42:15 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Creamos dos variables: una como contador y otra que sustituye a 'lst' para no
-modificarlo. El contador está a 0, e introducimos en un bucle a nuestro ´lst´
-nuevo hasta que llegue a nulo. Dentro, irá desplazándose a lo largo de la lista
-y sumando el contador. Al salir, devuelve simplemente el contador.
+/*									LSTSIZE
+We create two variables: one as a counter and another one that replaces 'lst' 
+so as not to modify it. The counter is set to 0, and we loop our new 'lst' until
+it reaches null. Inside, it will scroll down the list and add the counter.
+On exit, it simply returns the counter.
 */
 
 int	ft_lstsize(t_list *lst)

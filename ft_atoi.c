@@ -6,13 +6,13 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:09:25 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/20 13:59:14 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:12:32 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//				ATOI - Locate and convert a string to an integer.
+//									ATOI
 
 /**
  * @brief This function will check if it is a space or any escape route. 

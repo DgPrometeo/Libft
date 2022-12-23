@@ -6,7 +6,7 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:56:23 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 18:35:38 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:45:45 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ char	*ft_itoa(int n);
  * @param c The element to search for in the function.
  * @param n Area to be scanned.
  * 
- * @return A pointer to the matching byte or NULL if the character does 
- * not occur in the given memory area.
+ * @return A pointer to the matching byte or 
+ * @return NULL if the character does not occur in the given memory area.
  **/
 void	*ft_memchr(const void *s, int c, size_t n);
 
@@ -407,102 +407,100 @@ int		ft_toupper(int c);
 //							----BONUS----
 
 /**								LSTNEW
- * @brief	Crea un nuevo nodo con malloc y la variable de 'content' se 
- * inicializa con el contenido del parametro 'content'. y el 'next' con NULL.
+ * @brief	Create a new node with malloc and the 'content' variable is initialised
+ * with the contents of the 'content' parameter and the 'next' with NULL.
  * 
- * @param content El contenido con el que crear el nodo.
+ * @param content The content with which to create the node.
  * 
- * @return Un nuevo modo.
+ * @return A new node.
  **/
 t_list	*ft_lstnew(void *content);
 
 /**								LSTADD_FRONT
- * @brief	Añade el nodo 'new' al principio de la lista 'lst' 
+ * @brief	Add the node 'new' to the beginning of the list 'lst'. 
  * 
- * @param lst La direccion de un puntero al primer nodo de la lista.
- * @param new Un puntero al nodo que añadir al principio de la lista.
+ * @param lst The address of a pointer to the first node in the list.
+ * @param new A pointer to the node to add to the top of the list.
  * 
  * @return Nothing.
  **/
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /**								LSTSIZE
- * @brief	Cuenta el numero de nodos de una lista. 
+ * @brief	Counts the number of nodes in a list. 
  * 
- * @param lst El primer nodo de la lista.
+ * @param lst The first node in the list.
  * 
- * @return La longitud de la lista.
+ * @return The length of the list.
  **/
 int		ft_lstsize(t_list *lst);
 
 /**								LSTLAST
- * @brief	Devuelve el ultimo nodo de la lista 
+ * @brief	Search and returns the last node in the list. 
  * 
- * @param lst El primer nodo de la lista.
+ * @param lst The first node in the list.
  * 
- * @return El ultimo nodo de la lista.
+ * @return The last node in the list.
  **/
 t_list	*ft_lstlast(t_list *lst);
 
 /**								LSTADD_BACK
- * @brief	Añade el nodo 'new' al final de la lista 'lst' 
+ * @brief	Add the node 'new' to the end of the list 'lst'.
  * 
- * @param lst El primer nodo de la lista.
- * @param new Un puntero al nodo que añadir a la lista.
+ * @param lst The first node in the list.
+ * @param new A pointer to the node to add to the list.
  * 
  * @return Nothing.
  **/
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 /**								LSTDELONE
- * @brief	Toma el nodo 'lst' y libera la memoria usando la función
- * 'del', además de liberar con free. La memoria next no la libera. 
+ * @brief	Take the node 'lst' and free the memory using the function 'del'
+ * and also frees the list with free. Next memory is not freed. 
  * 
- * @param lst El nodo a liberar.
- * @param del Un puntero a la función utilizada para liberar el contenido
- * del nodo.
+ * @param lst The node to be liberated.
+ * @param del A pointer to the function used to free the content of the node.
  * 
  * @return Nothing.
  **/
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 /**								LSTCLEAR
- * @brief	Elimina y libera el nodo 'lst' y todos los consecutivos, utilizando
- * la función del y después con free. Al final, el puntero de lst debe ser NULL.
+ * @brief	Remove and free the node 'lst' and all consecutive nodes, using
+ * the 'del' function and then free. The pointer to 'lst' must be NULL.
  * 
- * @param lst El puntero al primer nodo.
- * @param del Un puntero a la función utilizada para liberar el contenido
- * de cada nodo.
+ * @param lst The pointer to the first node.
+ * @param del A pointer to the function used to free the contents of each node.
  * 
  * @return Nothing.
  **/
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 /**								LSTITER
- * @brief	Itera la lista 'lst' y aplica la función 'f' en el contenido de 
- * cada nodo.
+ * @brief	Iterate the list 'lst' and apply the function 'f' on the contents
+ * of each node.
  * 
- * @param lst El puntero al primer nodo.
- * @param f Un puntero a la función utilizada en cada nodo.
+ * @param lst The pointer to the first node.
+ * @param f A pointer to the function used in each node.
  * 
  * @return Nothing.
  **/
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**								LSTMAP
- * @brief	Itera la lista 'lst' y aplica la función 'f' en el contenido de 
- * cada nodo. Crea una lista resultante de la aplicación correcta y sucesiva
- * de la función 'f' sobre cada nodo. la función 'del' eliminará el contenido
- * de un nodo si fuera necesario.
+ * @brief	Iterate the list 'lst' and apply the function 'f' on the content
+ * of each node. Creates a list resulting from the correct and successive 
+ * application of the 'f' function on each node. The 'del' function will 
+ * remove the contents of a node if necessary.
  * 
- * @param lst El puntero a un nodo.
- * @param f la dirección de un puntero a una función usada en la iteración
- * de cada elemento de la lista.
- * @param del Un puntero a la función utilizada para eliminar el contenido
- * del nodo si fuera necesario.
+ * @param lst The pointer to a node.
+ * @param f The address of a pointer to a function used in iterating of each
+ * item in the list.
+ * @param del A pointer to the function used to remove the content of the node
+ * if necessary.
  * 
- * @return La nueva lista.
- * @return Nulo si falla la reserva de memoria.
+ * @return The new list.
+ * @return Null if memory backup fails.
  **/
 t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *));
 

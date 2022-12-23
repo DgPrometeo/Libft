@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//									SPLIT
 /**
  * @brief This function runs through the string counting how many sections the 
  * memory pool must have to hold the string in memory. memory cache has to have 

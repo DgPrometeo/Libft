@@ -6,17 +6,17 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:05:09 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/22 18:19:05 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/23 12:32:34 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Creamos una variable auxiliar para que sea el puntero de lst. Creamos un bucle
-que recorra toda la lista y en ella indicamos que el aux es el siguiente que esté
-en la lista y llamamos a la función 'ft_lstdelone' para borrar y liberar. Y
-le indicamos que al puntero de lst es el nuevo aux vacío.
+/*									LSTCLEAR
+Create an auxiliary variable to be the pointer to 'lst'. We create a loop that
+goes through the whole list and in it, we indicate that the 'aux' is the next
+one in the list and we call the function 'ft_lstdelone' to delete and free it.
+And we indicate that the pointer of 'lst' is the new empty 'aux'.
 */
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*								PUTCHAR_FD
+We execute a normal write, but we indicate that the file descriptor will be
+given to us beforehand.
+*/
+
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
