@@ -6,13 +6,21 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:05:03 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/11 17:11:43 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 17:47:52 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//								STRNCMP
+/*								STRNCMP
+We create a counter that will loop through the two strings. In a loop, the 
+counter will loop through the strings until they are null or reach the number 
+specified in the function, 'n'. In it, if it finds a difference between the two 
+strings, it will give the result of the subtraction of both strings at their 
+current position.
+If the counter exits the loop without finding a difference, it will return 
+the subtraction.
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

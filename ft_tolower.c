@@ -6,13 +6,16 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:05:14 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/09 19:22:59 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:13:28 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//		TOLOWER - Transforms lowercase characters to uppercase.
+/*									TOLOWER
+If the character is an uppercase, 32 will be reduced to make it a lowercase
+character.
+*/
 
 int	ft_tolower(int c)
 {

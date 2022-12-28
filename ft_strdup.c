@@ -12,7 +12,14 @@
 
 #include "libft.h"
 
-//									STRDUP
+/*									STRDUP
+We create a counter, a 'char *' to be the memory pool, and an integer to know 
+the dimension of the given string with the function 'ft_strlen'. We create the 
+memory with the dimension obtained with the previous function + 1 to add the 
+null. Once we have verified that it has been generated correctly, we proceed 
+to add each position of the string inside the memory reserve, placing the null
+in the last position.
+*/
 
 char	*ft_strdup(const char *s1)
 {

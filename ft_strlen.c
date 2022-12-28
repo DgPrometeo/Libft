@@ -6,13 +6,16 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:51:23 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/09 19:22:59 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 17:42:57 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//					STRLEN - Returns the dimension of a string.
+/*								STRLEN
+We create a counter, and loop through the string until it reaches null, 
+returning the amount of the counter.
+*/
 
 size_t	ft_strlen(const char *s)
 {

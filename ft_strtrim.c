@@ -6,11 +6,25 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:20:00 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/11 20:49:21 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:08:26 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*								STRTRIM
+We create the counter variable and another one to count the end (with 'ft_strlen'
+function). First I check that I have the two elements given in the function, if 
+any of them is missing, it will give null.
+I create a loop in which the counter will stop when it finds, thanks to the 
+function 'ft_strchr', the difference between the string and 'set'.
+Then, I find again the difference with the function 'ft_strrchr' from the end.
+And finally I return the function 'ft_substr' to create a memory reservation 
+with malloc created with the string that I have to be modified. The initial 
+position is where the counter that started at 0 was and the dimension will be 
+the counter that started from the end subtracted the initial counter +1 to 
+consider the null space.
+*/
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -27,16 +41,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		fin--;
 	return (ft_substr(s1, i, fin - i + 1));
 }
-
-/*
-Creamos la variable de contador y otra para contabilizar el final.
-también creo una variable char para convertirla en la string recortada guardada.
-
-primero verifico que tenga las dos, sino da nulo (con NULL).
-contabilizo el final con strlen. 
-creo un bucle en el que parará cuando encuentre, gracias a strchr, la diferencia.
-despues,vuelvo a localizar la diferencia con strrchr al final.
-Y devuelvo el malloc creado con substr con el string que tengo que tener el s1 
-que se va a modificar, el start es donde se quedó i, terminando con el fin que 
-es donde se ubica la diferencia, y el +1 para el nulo.
-*/

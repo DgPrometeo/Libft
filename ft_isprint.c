@@ -6,12 +6,11 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:51:58 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/23 12:01:43 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:15:11 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /*									ISPRINT
 We check if it is printable.

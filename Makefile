@@ -6,7 +6,7 @@
 #    By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 13:52:08 by danielga          #+#    #+#              #
-#    Updated: 2022/12/23 11:58:18 by danielga         ###   ########.fr        #
+#    Updated: 2022/12/27 18:45:52 by danielga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@
 NAME = libft.a
 
 # The flags with which we will compile the functions.
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+
+# The command compile the functions.
+CC = gcc
 
 # All the files of the functions it will host.
 SOURCE = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -43,8 +46,7 @@ all:	$(NAME)
 
 #It will compile the functions and create the library with ar.
 #(c create, r replace, s make #index).
-$(NAME):
-	gcc $(FLAGS) -c $(SOURCE)
+$(NAME): $(OBJS)
 	ar -crs $(NAME) $(OBJS)
 
 #Deletes all *.o files created in the process.
@@ -60,8 +62,7 @@ fclean:	clean
 re:	fclean all
 
 #It will compile the bonus functions and create the library with ar.
-bonus:
-	gcc $(FLAGS) -c $(SRCBONUS)
+bonus: $(OBJSBONUS)
 	ar -crs $(NAME) $(OBJSBONUS)
 
 #This is to indicate to make that these commands have been given specific instructions.

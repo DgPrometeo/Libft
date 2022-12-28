@@ -6,13 +6,25 @@
 /*   By: danielga <danielga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 13:09:25 by danielga          #+#    #+#             */
-/*   Updated: 2022/12/10 20:49:12 by danielga         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:11:59 by danielga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//								SUBSTR
+/*								SUBSTR
+First we check if we have a string. If there is no 's', I return null.
+Next, we have to check if the size of the string is smaller than the start 
+location. If it is, we must create an empty memory, since we cannot add any 
+elements of the string.
+If (the size of the string - the position of the 'start') is "<" the maximum 
+length of the substring, we have to modify the 'len' so that it can cover that
+information and not be larger and add more elements than necessary.
+Once these possibilities are established, we create the malloc with the 
+dimension of the len +1 to occupy the necessary plus the null. We check that
+it has been created and use the function 'ft_memcpy' to copy into memory, the
+string at the 'start' position to the 'len'. Finally returning the memory.
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -31,26 +43,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[len] = '\0';
 	return (str);
 }
-
-/*
-En primer lugar revisamos si tenemos string. Si no hay s, es nulo.
-
-Después, tenemos que revisar si el tamaño del string es inferior a la
-ubicación del start. Si es así, debemos de crear una memoria pero vacía, ya que
-no podemos añadir ningún elemento del string.
-
-Si (el tamaño del string - la posición del start) es "<" la longitud máxima
-del substring, tenemos que modificar el len para que pueda abarcar esa 
-información y no sea de mayor tamaño y añada más elementos de los necesarios.
-
-
-Una vez establecidas esas posibilidades, creamos el malloc con la dimension del 
-len +1 para ocupar lo necesario más el nulo. Revisamos que se haya creado y 
-usamos el memcpy para copiar en la memoria el string en la posición del start 
-hasta el len. Devolviendo finalmente la memoria.
-
-teorías:
-Si len < start ¿debería de dejar la memoria sin el string? 
-Si start == 0 ¿debería de empezar desde la primera posición?
-Si la dimensión del string < start  ¿debería dar una memoria vacia?
-*/
